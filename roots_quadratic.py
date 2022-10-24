@@ -1,5 +1,6 @@
 #2. Write a generic program to find the roots of a quadratic equation. 
 import math
+print("code for finding root of a equation")
 a=int(input("enter a: "))
 b=int(input("enter b: "))
 c=int(input("enter c: "))
