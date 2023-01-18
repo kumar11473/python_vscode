@@ -1,10 +1,36 @@
-#2. Write a generic program to find the roots of a quadratic equation. 
-import math
-print("code for finding root of a equation")
-a=int(input("enter a: "))
-b=int(input("enter b: "))
-c=int(input("enter c: "))
-x1=(((-b)+math.sqrt(pow(b,2)-4*a*c))/2*a)
-print("first root =",x1)
-x2=(((-b)-math.sqrt(pow(b,2)-4*a*c))/2*a)
-print("second root" ,x2)
+// C++ code to print all possible subarrays for given array
+// using recursion
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Recursive function to print all possible subarrays for
+// given array
+void printSubArrays(vector<int> arr, int start, int end)
+{
+	// Stop if we have reached the end of the array
+	if (end == arr.size())
+		return;
+	// Increment the end point and start from 0
+	else if (start > end)
+		printSubArrays(arr, 0, end + 1);
+	// Print the subarray and increment the starting point
+	else {
+		cout << "[";
+		for (int i = start; i < end; i++)
+			cout << arr[i] << ", ";
+		cout << arr[end] << "]" << endl;
+		printSubArrays(arr, start + 1, end);
+	}
+	return;
+}
+
+int main()
+{
+	int t; cin>>t;
+	vector<int> arr = { 23,2,4,6,7 };
+	printSubArrays(arr, 0, 0);
+	return 0;
+}
+
+// This code is contributed by Sania Kumari Gupta
